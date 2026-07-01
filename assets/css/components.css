@@ -1,0 +1,301 @@
+/* ==========================================================================
+   Components — buttons, cards, badges, media placeholder
+   ========================================================================== */
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--fs-base);
+  border: 1px solid transparent;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--color-primary-dark);
+}
+
+.btn--accent {
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+}
+
+.btn--accent:hover,
+.btn--accent:focus-visible {
+  background: var(--color-accent-dark);
+  color: #fff;
+}
+
+.btn--outline {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn--ghost-light {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.btn--ghost-light:hover,
+.btn--ghost-light:focus-visible {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn--sm {
+  padding: 0.55rem 1.1rem;
+  font-size: var(--fs-sm);
+}
+
+/* ---------- Tab buttons ---------- */
+.tab-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.tab-btn:hover,
+.tab-btn:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.tab-btn.is-active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ---------- Media placeholder (chưa có ảnh thật — xem mục 9 CLAUDE.md) ---------- */
+.media-placeholder {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 25% 20%, rgba(217, 164, 65, 0.18), transparent 45%),
+    linear-gradient(135deg, var(--color-primary-tint), #ffffff);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  overflow: hidden;
+}
+
+.media-placeholder svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.8;
+}
+
+.media-placeholder span {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  padding-inline: var(--space-4);
+}
+
+.media-placeholder--square {
+  aspect-ratio: 1 / 1;
+}
+
+/* ---------- Card chương trình ---------- */
+.program-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.program-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.program-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.program-card h3 {
+  font-size: var(--fs-md);
+}
+
+.program-card p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  flex-grow: 1;
+}
+
+.program-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  color: var(--color-primary);
+}
+
+.program-card__link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--transition);
+}
+
+.program-card__link:hover svg {
+  transform: translateX(3px);
+}
+
+/* ---------- Card tin tức ---------- */
+.news-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.news-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.news-card__media {
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+  border: none;
+}
+
+.news-card__body {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex-grow: 1;
+}
+
+.news-card__tag {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-accent-dark);
+  background: rgba(217, 164, 65, 0.14);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.news-card__body h3 {
+  font-size: var(--fs-md);
+}
+
+.news-card__body p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  flex-grow: 1;
+}
+
+.news-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.news-card__meta svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ---------- Back to top ---------- */
+.back-to-top {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition), background var(--transition);
+  z-index: 90;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--color-primary-dark);
+}
+
+.back-to-top svg {
+  width: 18px;
+  height: 18px;
+}
