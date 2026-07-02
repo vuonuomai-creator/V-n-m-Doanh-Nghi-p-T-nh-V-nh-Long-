@@ -153,6 +153,13 @@
   border-color: transparent;
 }
 
+.program-card--cta {
+  background: var(--color-primary-tint);
+  border-color: transparent;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 .program-card__icon {
   display: inline-flex;
   align-items: center;

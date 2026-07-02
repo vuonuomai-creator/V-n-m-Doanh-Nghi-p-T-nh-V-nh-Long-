@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <title>Ledger Book and Coin</title>
+  <!-- Book outline -->
+  <rect x="3" y="4" width="15" height="16" rx="2" ry="2"/>
+  <!-- Pages/Lines inside the book -->
+  <path d="M 6 8 H 17 M 6 12 H 17 M 6 16 H 17"/>
+  <!-- Coin -->
+  <circle cx="19" cy="17" r="4"/>
+  <!-- Vertical line inside coin for currency symbol -->
+  <path d="M 19 15.5 V 18.5"/>
+</svg>

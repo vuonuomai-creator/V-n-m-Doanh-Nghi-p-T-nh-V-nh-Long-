@@ -4,7 +4,7 @@ Tài liệu định hướng cho Claude Code khi làm việc trong dự án này
 
 ## 1. Tổng quan dự án
 
-- **Chủ thể:** Vườn Ươm Doanh Nghiệp Tỉnh Vĩnh Long, đơn vị trực thuộc Trường Đại học Trà Vinh. Website hiện tại đang chạy tại `vuonuom.tvu.edu.vn` — dự án này là làm mới (redesign/rebuild) theo phong cách tối giản, hiện đại, chuyên nghiệp hơn, giữ nguyên nội dung/thông tin thật (xem mục 2).
+- **Chủ thể:** Vườn Ươm Doanh Nghiệp Tỉnh Vĩnh Long, đơn vị trực thuộc Đại học Trà Vinh. Website hiện tại đang chạy tại `vuonuom.tvu.edu.vn` — dự án này là làm mới (redesign/rebuild) theo phong cách tối giản, hiện đại, chuyên nghiệp hơn, giữ nguyên nội dung/thông tin thật (xem mục 2).
 - **Mục tiêu site:** giới thiệu tổ chức, trình bày các chương trình/hoạt động ươm tạo, cập nhật tin tức, cung cấp thông tin liên hệ — **không** phải nền tảng giao dịch hay hệ thống đăng nhập phức tạp.
 - **Đối tượng người xem:** sinh viên, doanh nhân, startup/SME, hợp tác xã, cán bộ giảng viên cần tập huấn khởi nghiệp, đối tác và nhà đầu tư.
 - **Ngôn ngữ:** Tiếng Việt là chính. Viết HTML với `lang="vi"`, đảm bảo font hiển thị đúng dấu.
@@ -15,8 +15,8 @@ Tài liệu định hướng cho Claude Code khi làm việc trong dự án này
 Nguồn: `https://vuonuom.tvu.edu.vn` (đối chiếu lại nếu nội dung trên site gốc thay đổi).
 
 - **Tên đầy đủ:** Vườn Ươm Doanh Nghiệp Tỉnh Vĩnh Long
-- **Đơn vị chủ quản:** Trường Đại học Trà Vinh
-- **Địa chỉ:** Tòa nhà D5, Trường Đại học Trà Vinh, số 126 Nguyễn Thiện Thành, phường Hòa Thuận, tỉnh Vĩnh Long
+- **Đơn vị chủ quản:** Đại học Trà Vinh
+- **Địa chỉ:** Tòa nhà D5, Đại học Trà Vinh, số 126 Nguyễn Thiện Thành, phường Hòa Thuận, tỉnh Vĩnh Long
 - **Điện thoại:** 03943.855246 / (+84) 294.3855246 (ext. 127)
 - **Email:** vuonuomdoanhnghiep@tvu.edu.vn
 - **Mạng xã hội:** Facebook, TikTok `@vuonuomvinhlong`, Zalo
@@ -44,8 +44,8 @@ Trở thành trung tâm hỗ trợ khởi nghiệp hàng đầu trong nước đ
 | 28/12/2018 | Chính thức thành lập theo Quyết định số 323/QĐ-SKHĐT (Sở Kế hoạch và Đầu tư) |
 | 2018 – 01/2022 | Đồng quản lý bởi Ban QLDA SME và Trường ĐH Trà Vinh; thuê ngoài vận hành cho Xlabs (12/2020–2021, do ảnh hưởng Covid-19) |
 | 01/2022 – 11/2022 | Chuyển giao về Trung tâm Xúc tiến đầu tư và Hỗ trợ doanh nghiệp (Sở KH&ĐT) |
-| 11/2022 – 04/2025 | Bàn giao về Trường Đại học Trà Vinh quản lý, vận hành |
-| 05/2025 – 07/2025 | Chính thức trở thành đơn vị trực thuộc Trường Đại học Trà Vinh |
+| 11/2022 – 04/2025 | Bàn giao về Đại học Trà Vinh quản lý, vận hành |
+| 05/2025 – 07/2025 | Chính thức trở thành đơn vị trực thuộc Đại học Trà Vinh |
 | 08/2025 – nay | Đổi tên thành Vườn Ươm Doanh Nghiệp Tỉnh Vĩnh Long, trực thuộc Trường ĐH Trà Vinh, hướng tới tự chủ tài chính |
 
 ### Số liệu nổi bật (dùng cho khối "counter" trang chủ)

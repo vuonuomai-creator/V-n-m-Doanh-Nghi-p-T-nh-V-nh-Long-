@@ -52,9 +52,13 @@
     if (!tabs.length) return;
 
     tabs.forEach((tab) => {
+      tab.setAttribute("aria-pressed", tab.classList.contains("is-active") ? "true" : "false");
       tab.addEventListener("click", () => {
         const target = tab.getAttribute("data-tab-target");
-        tabs.forEach((t) => t.classList.toggle("is-active", t === tab));
+        tabs.forEach((t) => {
+          t.classList.toggle("is-active", t === tab);
+          t.setAttribute("aria-pressed", t === tab ? "true" : "false");
+        });
         panels.forEach((p) => {
           const match = target === "all" || p.getAttribute("data-tab-panel") === target;
           p.classList.toggle("is-hidden", !match);
@@ -76,20 +80,275 @@
     });
   }
 
+  function initHeroCarousel() {
+    const root = document.getElementById("heroCarousel");
+    const track = document.getElementById("heroCarouselTrack");
+    const dotsWrap = document.getElementById("heroDots");
+    const prevBtn = document.getElementById("heroPrev");
+    const nextBtn = document.getElementById("heroNext");
+    if (!root || !track || !dotsWrap) return;
+
+    const slides = Array.from(track.children);
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let index = 0;
+    let autoplayTimer = null;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "hero-carousel__dot" + (i === 0 ? " is-active" : "");
+      dot.setAttribute("role", "tab");
+      dot.setAttribute("aria-label", `Xem ảnh ${i + 1}`);
+      dot.setAttribute("aria-selected", i === 0 ? "true" : "false");
+      dot.addEventListener("click", () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function goTo(newIndex) {
+      index = (newIndex + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, i) => {
+        d.classList.toggle("is-active", i === index);
+        d.setAttribute("aria-selected", i === index ? "true" : "false");
+      });
+    }
+
+    function next() {
+      goTo(index + 1);
+    }
+
+    function prev() {
+      goTo(index - 1);
+    }
+
+    function startAutoplay() {
+      if (prefersReducedMotion || slides.length < 2) return;
+      stopAutoplay();
+      autoplayTimer = setInterval(next, 5500);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", () => { prev(); startAutoplay(); });
+    if (nextBtn) nextBtn.addEventListener("click", () => { next(); startAutoplay(); });
+
+    root.addEventListener("mouseenter", stopAutoplay);
+    root.addEventListener("mouseleave", startAutoplay);
+
+    root.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { prev(); startAutoplay(); }
+      if (e.key === "ArrowRight") { next(); startAutoplay(); }
+    });
+
+    // Vuốt trái/phải trên mobile
+    let touchStartX = 0;
+    let touchDeltaX = 0;
+
+    track.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchDeltaX = 0;
+      stopAutoplay();
+    }, { passive: true });
+
+    track.addEventListener("touchmove", (e) => {
+      touchDeltaX = e.touches[0].clientX - touchStartX;
+    }, { passive: true });
+
+    track.addEventListener("touchend", () => {
+      if (touchDeltaX > 40) {
+        prev();
+      } else if (touchDeltaX < -40) {
+        next();
+      }
+      startAutoplay();
+    });
+
+    goTo(0);
+    startAutoplay();
+  }
+
+  function initActivityFilters() {
+    const list = document.getElementById("activityList");
+    if (!list) return;
+
+    const cards = Array.from(list.querySelectorAll(".activity-card"));
+    const tabs = Array.from(document.querySelectorAll("[data-activity-category]"));
+    const statusSelect = document.getElementById("filterStatus");
+    const formatSelect = document.getElementById("filterFormat");
+    const areaSelect = document.getElementById("filterArea");
+    const searchInput = document.getElementById("activitySearch");
+    const searchBtn = document.getElementById("activitySearchBtn");
+    const emptyState = document.getElementById("activityEmpty");
+    let activeCategory = "all";
+
+    function applyFilters() {
+      const status = statusSelect.value;
+      const format = formatSelect.value;
+      const area = areaSelect.value;
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const matches =
+          (activeCategory === "all" || card.dataset.category === activeCategory) &&
+          (status === "all" || card.dataset.status === status) &&
+          (format === "all" || card.dataset.format === format) &&
+          (area === "all" || card.dataset.area === area) &&
+          (!query || card.dataset.title.includes(query));
+
+        card.classList.toggle("is-hidden", !matches);
+        if (matches) visibleCount++;
+      });
+
+      if (emptyState) emptyState.classList.toggle("is-visible", visibleCount === 0);
+    }
+
+    tabs.forEach((tab) => {
+      tab.setAttribute("aria-pressed", tab.classList.contains("is-active") ? "true" : "false");
+      tab.addEventListener("click", () => {
+        activeCategory = tab.getAttribute("data-activity-category");
+        tabs.forEach((t) => {
+          t.classList.toggle("is-active", t === tab);
+          t.setAttribute("aria-pressed", t === tab ? "true" : "false");
+        });
+        applyFilters();
+      });
+    });
+
+    [statusSelect, formatSelect, areaSelect].forEach((el) => {
+      if (el) el.addEventListener("change", applyFilters);
+    });
+
+    if (searchBtn) searchBtn.addEventListener("click", applyFilters);
+    if (searchInput) {
+      searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          applyFilters();
+        }
+      });
+    }
+
+    const hash = location.hash.replace("#", "");
+    const target = tabs.find((t) => t.getAttribute("data-activity-category") === hash);
+    if (target) target.click();
+  }
+
+  function initNewsFilter() {
+    const list = document.getElementById("newsList");
+    if (!list) return;
+
+    const items = Array.from(list.querySelectorAll(".news-list-item"));
+    const filterLinks = Array.from(document.querySelectorAll("[data-news-filter]"));
+    if (!filterLinks.length) return;
+
+    filterLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const category = link.getAttribute("data-news-filter");
+        filterLinks.forEach((l) => {
+          l.classList.toggle("is-active", l === link);
+          l.setAttribute("aria-pressed", l === link ? "true" : "false");
+        });
+        items.forEach((item) => {
+          const matches = category === "all" || item.getAttribute("data-news-category") === category;
+          item.classList.toggle("is-hidden", !matches);
+        });
+      });
+    });
+  }
+
+  function initProgramSearch() {
+    const grid = document.getElementById("programGrid");
+    if (!grid) return;
+
+    const cards = Array.from(grid.querySelectorAll(".program-card"));
+    const searchInput = document.getElementById("programSearch");
+    const searchBtn = document.getElementById("programSearchBtn");
+    const emptyState = document.getElementById("programEmpty");
+
+    function applyFilter() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const matches = !query || card.dataset.title.includes(query);
+        card.classList.toggle("is-hidden", !matches);
+        if (matches) visibleCount++;
+      });
+
+      if (emptyState) emptyState.classList.toggle("is-visible", visibleCount === 0);
+    }
+
+    if (searchBtn) searchBtn.addEventListener("click", applyFilter);
+    if (searchInput) {
+      searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          applyFilter();
+        }
+      });
+    }
+  }
+
   function initContactForm() {
     const form = document.getElementById("contactForm");
     const success = document.getElementById("contactSuccess");
+    const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
     if (!form) return;
+
+    function validateField(field) {
+      const group = field.closest(".form-group");
+      if (!group) return true;
+      let valid = field.checkValidity();
+      group.classList.toggle("is-invalid", !valid);
+      return valid;
+    }
+
+    form.querySelectorAll("input, textarea").forEach((field) => {
+      field.addEventListener("blur", () => validateField(field));
+      field.addEventListener("input", () => {
+        if (field.closest(".form-group")?.classList.contains("is-invalid")) {
+          validateField(field);
+        }
+      });
+    });
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
+      const fields = Array.from(form.querySelectorAll("input, textarea"));
+      let firstInvalid = null;
+      fields.forEach((field) => {
+        const valid = validateField(field);
+        if (!valid && !firstInvalid) firstInvalid = field;
+      });
+      if (firstInvalid) {
+        firstInvalid.focus();
         return;
       }
-      form.reset();
-      form.classList.add("is-hidden");
-      if (success) success.classList.remove("is-hidden");
+
+      if (submitBtn) {
+        submitBtn.classList.add("btn--loading");
+        submitBtn.disabled = true;
+      }
+
+      window.setTimeout(() => {
+        form.reset();
+        form.querySelectorAll(".form-group.is-invalid").forEach((g) => g.classList.remove("is-invalid"));
+        form.classList.add("is-hidden");
+        if (submitBtn) {
+          submitBtn.classList.remove("btn--loading");
+          submitBtn.disabled = false;
+        }
+        if (success) {
+          success.classList.remove("is-hidden");
+          success.focus();
+        }
+      }, 700);
     });
   }
 
@@ -111,6 +370,10 @@
     initMobileNav();
     initTabs();
     initBackToTop();
+    initHeroCarousel();
+    initActivityFilters();
+    initNewsFilter();
+    initProgramSearch();
     initContactForm();
     setYear();
     markActiveNav();

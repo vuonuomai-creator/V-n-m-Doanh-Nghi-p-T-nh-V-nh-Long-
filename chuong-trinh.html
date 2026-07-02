@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chương trình — Vườn Ươm Doanh Nghiệp Tỉnh Vĩnh Long</title>
+  <meta name="description" content="Các chương trình đào tạo và hỗ trợ doanh nghiệp của Vườn Ươm Doanh Nghiệp Tỉnh Vĩnh Long: Huấn luyện doanh nghiệp, Học viện khởi nghiệp, Khởi sự kinh doanh online, Kế toán căn bản, Ứng dụng AI." />
+  <link rel="icon" type="image/png" href="assets/images/favicon-32.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
+
+  <header class="site-header" data-include="assets/partials/header.html"></header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Trang chủ</a>
+          <span>/</span>
+          <span class="breadcrumb__current">Chương trình</span>
+        </div>
+        <h1>Chương trình</h1>
+        <p>5 chương trình đào tạo &amp; hỗ trợ doanh nghiệp — thiết kế riêng cho từng giai đoạn phát triển, từ ý tưởng đến vận hành ổn định.</p>
+      </div>
+    </section>
+
+    <section class="section" id="chuong-trinh-tong-quan">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Chương trình</span>
+          <h2>Tìm chương trình phù hợp với bạn</h2>
+        </div>
+
+        <div class="filter-bar reveal">
+          <div class="filter-search" style="flex: 1;">
+            <input type="search" id="programSearch" placeholder="Tìm theo tên chương trình" aria-label="Tìm theo tên chương trình" />
+            <button type="button" id="programSearchBtn" class="btn btn--primary btn--sm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              Tìm kiếm
+            </button>
+          </div>
+        </div>
+
+        <div class="program-grid reveal" id="programGrid">
+          <a href="#hoc-vien-khoi-nghiep" class="program-card" data-title="học viện khởi nghiệp khóa v 2025">
+            <span class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><title>Học viện khởi nghiệp</title><path d="M 12 3 L 21 9 L 12 15 L 3 9 Z"/><path d="M 3 9 L 3 17 Q 12 21 21 17 L 21 9"/><line x1="12" y1="9" x2="18" y2="7"/><circle cx="18" cy="7" r="1.5"/></svg>
+            </span>
+            <h3>Học viện khởi nghiệp</h3>
+            <p>Chương trình "tăng tốc khởi nghiệp" — 17 buổi thực chiến cùng chuyên gia, tư vấn 1:1 và ngày đầu tư thử nghiệm thu hút vốn.</p>
+            <span class="program-card__link">Xem chi tiết
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+
+          <a href="#huan-luyen-doanh-nghiep" class="program-card" data-title="huấn luyện doanh nghiệp">
+            <span class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><title>Huấn luyện doanh nghiệp</title><circle cx="7" cy="7" r="2.5"/><path d="M4 16 Q7 9.5 10 16"/><circle cx="17" cy="7" r="2.5"/><path d="M14 16 Q17 9.5 20 16"/><path d="M12 18 V10 M10.5 12 L12 10 L13.5 12"/></svg>
+            </span>
+            <h3>Huấn luyện doanh nghiệp</h3>
+            <p>Mentoring 1:1, huấn luyện chuyên sâu giúp doanh nghiệp hoàn thiện mô hình kinh doanh và vận hành hiệu quả.</p>
+            <span class="program-card__link">Xem chi tiết
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+
+          <a href="#khoi-su-kinh-doanh-online" class="program-card" data-title="khởi sự kinh doanh online">
+            <span class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><title>Khởi sự kinh doanh online</title><path d="M2 9L12 3L22 9V21H2V9Z"/><path d="M10 15V21H14V15Z"/><path d="M10 8a2 2 0 0 1 4 0"/><path d="M9 7a3 3 0 0 1 6 0"/><path d="M8 6a4 4 0 0 1 8 0"/></svg>
+            </span>
+            <h3>Khởi sự kinh doanh online</h3>
+            <p>Hướng dẫn xây dựng kênh bán hàng, thương hiệu và vận hành kinh doanh trên nền tảng số.</p>
+            <span class="program-card__link">Xem chi tiết
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+
+          <a href="#ke-toan-can-ban" class="program-card" data-title="kế toán căn bản">
+            <span class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><title>Kế toán căn bản</title><rect x="3" y="4" width="15" height="16" rx="2" ry="2"/><path d="M 6 8 H 17 M 6 12 H 17 M 6 16 H 17"/><circle cx="19" cy="17" r="4"/><path d="M 19 15.5 V 18.5"/></svg>
+            </span>
+            <h3>Kế toán căn bản</h3>
+            <p>Kiến thức kế toán, tài chính cốt lõi giúp chủ doanh nghiệp quản lý dòng tiền và sổ sách.</p>
+            <span class="program-card__link">Xem chi tiết
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+
+          <a href="#ung-dung-ai" class="program-card" data-title="ứng dụng ai vào quản lý vận hành doanh nghiệp">
+            <span class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><title>Ứng dụng AI trong quản lý doanh nghiệp</title><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="12" cy="12" r="4"/><path d="M3 8h-2 M3 16h-2 M21 8h2 M21 16h2 M8 3V1 M16 3V1 M8 21v2 M16 21v2"/><path d="M17 2.5v3 M15.5 4h3"/></svg>
+            </span>
+            <h3>Ứng dụng AI vào quản lý, vận hành doanh nghiệp</h3>
+            <p>Tự động hóa quy trình, quản lý chuỗi cung ứng, giám sát chất lượng và ứng dụng chatbot cho doanh nghiệp.</p>
+            <span class="program-card__link">Xem chi tiết
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="activity-empty" id="programEmpty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <p>Không tìm thấy chương trình phù hợp. Vui lòng thử từ khóa khác hoặc <a href="lien-he.html" style="color:var(--color-primary); font-weight:600;">liên hệ</a> để được tư vấn.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="chuong-trinh-chi-tiet">
+      <div class="container content-layout">
+        <div class="content-main">
+          <div class="section-head reveal" style="margin-bottom: var(--space-6);">
+            <span class="eyebrow">Chi tiết</span>
+            <h2>Thông tin đầy đủ từng chương trình</h2>
+          </div>
+
+          <div class="prose reveal" id="huan-luyen-doanh-nghiep">
+            <h2>Huấn luyện doanh nghiệp</h2>
+            <p>Mentoring 1:1, huấn luyện chuyên sâu giúp doanh nghiệp hoàn thiện mô hình kinh doanh và vận hành hiệu quả — kết nối doanh nghiệp với chuyên gia, cố vấn giàu kinh nghiệm trong từng lĩnh vực cụ thể.</p>
+          </div>
+
+          <div class="prose reveal" id="hoc-vien-khoi-nghiep" style="margin-top: var(--space-8);">
+            <h2>Học viện khởi nghiệp</h2>
+            <p>Chương trình "tăng tốc khởi nghiệp" được thiết kế để hỗ trợ doanh nhân trong hành trình lập nghiệp — cung cấp kiến thức và kỹ năng kết hợp với bài tập thực tế, giúp giải quyết các vấn đề cụ thể của từng doanh nghiệp, hợp tác xã và dự án khởi nghiệp.</p>
+
+            <h2>Đối tượng</h2>
+            <ul>
+              <li>Doanh nghiệp</li>
+              <li>Hợp tác xã</li>
+              <li>Hộ kinh doanh</li>
+              <li>Dự án khởi nghiệp</li>
+            </ul>
+
+            <h2>Nội dung chương trình (Khóa V — 2025)</h2>
+            <ul>
+              <li>17 buổi thực chiến cùng các chuyên gia.</li>
+              <li>Các chủ đề: hiện thực hóa ý tưởng, xây dựng đội nhóm, văn hóa doanh nghiệp.</li>
+              <li>Tư vấn 1:1 với doanh nhân thành công.</li>
+              <li>Ngày đầu tư — thử nghiệm để thu hút vốn.</li>
+              <li>Đối thoại với các cơ quan nhà nước về chính sách hỗ trợ.</li>
+            </ul>
+
+            <h2>Quyền lợi</h2>
+            <p>Kết nối với các thị trường tiềm năng, tìm đối tác chiến lược, cập nhật chính sách nhà nước.</p>
+
+            <blockquote>Khóa V (2025) đã tổ chức lễ tốt nghiệp "CEO — Giám đốc điều hành chuyên nghiệp, kiến tạo" ngày 20/09/2025.</blockquote>
+          </div>
+
+          <div class="prose reveal" id="khoi-su-kinh-doanh-online" style="margin-top: var(--space-8);">
+            <h2>Khởi sự kinh doanh online</h2>
+            <p>Hướng dẫn xây dựng kênh bán hàng, thương hiệu và vận hành kinh doanh trên nền tảng số — phù hợp với hộ kinh doanh, cá nhân và doanh nghiệp mới bắt đầu chuyển đổi số.</p>
+          </div>
+
+          <div class="prose reveal" id="ke-toan-can-ban" style="margin-top: var(--space-8);">
+            <h2>Kế toán căn bản</h2>
+            <p>Kiến thức kế toán, tài chính cốt lõi giúp chủ doanh nghiệp tự tin quản lý dòng tiền, sổ sách và tuân thủ quy định pháp luật.</p>
+          </div>
+
+          <div class="prose reveal" id="ung-dung-ai" style="margin-top: var(--space-8);">
+            <h2>Ứng dụng AI vào quản lý, vận hành doanh nghiệp</h2>
+            <p>Vườn ươm tổ chức chương trình đào tạo về ứng dụng trí tuệ nhân tạo cho doanh nghiệp địa phương, do Ths. Nguyễn Lê Kha — thành viên Hội đồng Tư vấn Khởi nghiệp Quốc gia phía Nam — trực tiếp chia sẻ.</p>
+            <p>Nội dung tập trung vào tự động hóa quy trình nội bộ, quản lý chuỗi cung ứng, giám sát chất lượng sản phẩm và các ứng dụng chatbot. Phần thực hành giúp học viên trải nghiệm tình huống thực tế liên quan đến xây dựng mô hình kinh doanh và tối ưu hóa kế hoạch tài chính.</p>
+            <blockquote>"Việc ứng dụng A.I không chỉ dừng lại ở công nghệ, mà quan trọng hơn là sự thay đổi tư duy quản trị" của lãnh đạo doanh nghiệp — nên bắt đầu từ những ứng dụng nhỏ trước khi mở rộng.</blockquote>
+            <p style="color:var(--color-text-muted); font-size: var(--fs-sm);">Buổi đào tạo đầu tiên diễn ra ngày 04/09/2025. Xem thêm tại <a href="tin-tuc.html#kien-thuc" style="color:var(--color-primary); font-weight:600;">Tin tức</a>.</p>
+          </div>
+        </div>
+
+        <aside class="content-sidebar reveal">
+          <div class="side-card">
+            <h3>Chương trình</h3>
+            <ul>
+              <li><a href="#huan-luyen-doanh-nghiep">Huấn luyện doanh nghiệp</a></li>
+              <li><a href="#hoc-vien-khoi-nghiep">Học viện khởi nghiệp</a></li>
+              <li><a href="#khoi-su-kinh-doanh-online">Khởi sự kinh doanh online</a></li>
+              <li><a href="#ke-toan-can-ban">Kế toán căn bản</a></li>
+              <li><a href="#ung-dung-ai">Ứng dụng AI vào quản lý, vận hành doanh nghiệp</a></li>
+            </ul>
+          </div>
+          <div class="side-card">
+            <h3>Xem thêm</h3>
+            <ul>
+              <li><a href="hoat-dong.html">Hoạt động &amp; sự kiện</a></li>
+            </ul>
+          </div>
+          <div class="side-card">
+            <p style="color:var(--color-text-muted); font-size: var(--fs-sm); margin-bottom: var(--space-3);">Muốn tham gia chương trình?</p>
+            <a href="lien-he.html" class="btn btn--primary btn--sm">Đăng ký tư vấn</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-include="assets/partials/footer.html"></footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Lên đầu trang">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/scroll-reveal.js"></script>
+</body>
+</html>
