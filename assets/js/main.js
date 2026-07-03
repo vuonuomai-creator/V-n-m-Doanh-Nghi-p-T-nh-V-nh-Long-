@@ -267,6 +267,51 @@
     });
   }
 
+  function initActivityNewsSplit() {
+    const pool = document.getElementById("eventsPool");
+    const activityCol = document.getElementById("activityColumn");
+    const newsCol = document.getElementById("newsColumn");
+    if (!pool || !activityCol || !newsCol) return;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const items = Array.from(pool.children);
+    const activities = [];
+    const news = [];
+
+    items.forEach((item) => {
+      const dateStr = item.getAttribute("data-event-date");
+      if (!dateStr) {
+        activities.push(item);
+        return;
+      }
+      const eventDate = new Date(`${dateStr}T00:00:00`);
+      if (eventDate >= today) {
+        activities.push(item);
+      } else {
+        news.push(item);
+      }
+    });
+
+    // Hoạt động: chưa có ngày (chương trình liên tục) trước, có ngày thì gần nhất trước
+    activities.sort((a, b) => {
+      const da = a.getAttribute("data-event-date");
+      const db = b.getAttribute("data-event-date");
+      if (da && db) return new Date(da) - new Date(db);
+      if (da) return 1;
+      if (db) return -1;
+      return 0;
+    });
+
+    // Tin tức: mới nhất trước
+    news.sort((a, b) => new Date(b.getAttribute("data-event-date")) - new Date(a.getAttribute("data-event-date")));
+
+    activities.slice(0, 4).forEach((el) => activityCol.appendChild(el));
+    news.slice(0, 4).forEach((el) => newsCol.appendChild(el));
+    pool.remove();
+  }
+
   function initProgramSearch() {
     const grid = document.getElementById("programGrid");
     if (!grid) return;
@@ -378,6 +423,7 @@
     initHeroCarousel();
     initActivityFilters();
     initNewsFilter();
+    initActivityNewsSplit();
     initProgramSearch();
     initContactForm();
     setYear();

@@ -72,114 +72,129 @@
       </div>
     </section>
 
-    <!-- TIN TỨC -->
+    <!-- HOẠT ĐỘNG & TIN TỨC (tự động chuyển theo ngày thật) -->
     <section class="section section--alt" id="tin-tuc">
       <div class="container">
-        <div class="upcoming-strip reveal">
-          <div class="upcoming-strip__header">
-            <span class="upcoming-strip__ribbon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
-              Hoạt động sắp diễn ra
-            </span>
-            <a href="chuong-trinh.html" class="upcoming-strip__more">Xem thêm
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="upcoming-strip__grid">
-            <a href="chuong-trinh.html#hoc-vien-khoi-nghiep" class="upcoming-card">
-              <span class="upcoming-card__media">
-                <img src="assets/images/hero/event-2.jpg" alt="" loading="lazy" />
-              </span>
-              <span class="upcoming-card__body">
-                <span class="upcoming-card__tag">Chương trình</span>
-                <h3>Học viện khởi nghiệp</h3>
-                <span class="upcoming-card__meta">Trực tiếp tại Vườn ươm</span>
-                <span class="upcoming-card__meta">Tuyển sinh liên tục</span>
-              </span>
-            </a>
-
-            <a href="chuong-trinh.html#huan-luyen-doanh-nghiep" class="upcoming-card">
-              <span class="upcoming-card__media">
-                <img src="assets/images/hero/event-6.jpg" alt="" loading="lazy" />
-              </span>
-              <span class="upcoming-card__body">
-                <span class="upcoming-card__tag">Chương trình</span>
-                <h3>Huấn luyện doanh nghiệp</h3>
-                <span class="upcoming-card__meta">Trực tiếp tại Vườn ươm</span>
-                <span class="upcoming-card__meta">Đang triển khai</span>
-              </span>
-            </a>
-
-            <a href="chuong-trinh.html#khoi-su-kinh-doanh-online" class="upcoming-card">
-              <span class="upcoming-card__media">
-                <img src="assets/images/hero/event-3.jpg" alt="" loading="lazy" />
-              </span>
-              <span class="upcoming-card__body">
-                <span class="upcoming-card__tag">Chương trình</span>
-                <h3>Khởi sự kinh doanh online</h3>
-                <span class="upcoming-card__meta">Trực tuyến</span>
-                <span class="upcoming-card__meta">Tuyển sinh liên tục</span>
-              </span>
-            </a>
-          </div>
-        </div>
-
         <div class="section-head reveal">
-          <span class="eyebrow">Tin tức</span>
-          <h2>Tin tức &amp; cập nhật mới nhất</h2>
-          <p>Theo dõi hoạt động, sự kiện và chương trình mới nhất từ Vườn ươm.</p>
+          <span class="eyebrow">Hoạt động &amp; Tin tức</span>
+          <h2>Hoạt động sắp diễn ra &amp; Tin tức mới nhất</h2>
+          <p>Hoạt động còn diễn ra hiển thị bên trái; khi đã kết thúc sẽ tự động chuyển thành tin tức bên phải.</p>
         </div>
 
-        <div class="news-grid reveal">
-          <a href="tin-tuc.html#tin-hoi-nghi-giang-vien" class="news-card">
-            <div class="news-card__media" style="aspect-ratio:16/10; border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--color-border);">
-              <img src="assets/images/hero/event-8.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
+        <div class="activity-news-split reveal">
+          <div class="activity-news-split__col">
+            <div class="activity-news-split__header">
+              <h3>Hoạt động sắp diễn ra</h3>
+              <a href="hoat-dong.html" class="activity-news-split__more">Xem thêm
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
             </div>
-            <div class="news-card__body">
-              <span class="news-card__tag">Sự kiện</span>
-              <h3>Hội nghị giảng viên: Xây dựng chương trình đào tạo khởi nghiệp</h3>
-              <p>Hội nghị giảng viên nhằm xây dựng, hoàn thiện chương trình đào tạo khởi nghiệp và điều hành doanh nghiệp.</p>
-              <span class="news-card__meta">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
-                21/10/2025
-              </span>
-            </div>
-          </a>
+            <div class="activity-news-split__list" id="activityColumn"></div>
+          </div>
 
-          <a href="tin-tuc.html#tin-khai-giang-uom-tao" class="news-card">
-            <div class="news-card__media" style="aspect-ratio:16/10; border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--color-border);">
-              <img src="assets/images/hero/event-7.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <div class="activity-news-split__col">
+            <div class="activity-news-split__header">
+              <h3>Tin tức mới nhất</h3>
+              <a href="tin-tuc.html" class="activity-news-split__more">Xem thêm
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
             </div>
-            <div class="news-card__body">
-              <span class="news-card__tag">Ươm tạo</span>
-              <h3>Lễ khai giảng Ươm tạo doanh nghiệp khởi nghiệp sáng tạo 2025</h3>
-              <p>Khai giảng chương trình ươm tạo tại Sở Khoa học và Công nghệ Tây Ninh.</p>
-              <span class="news-card__meta">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
-                17/10/2025
-              </span>
-            </div>
-          </a>
-
-          <a href="tin-tuc.html#tin-dacum" class="news-card">
-            <div class="news-card__media" style="aspect-ratio:16/10; border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--color-border);">
-              <img src="assets/images/hero/event-4.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
-            </div>
-            <div class="news-card__body">
-              <span class="news-card__tag">Sự kiện</span>
-              <h3>Hội thảo Phân tích năng lực nghề nghiệp (DACUM)</h3>
-              <p>Hội thảo thuộc chương trình đào tạo khởi nghiệp và điều hành doanh nghiệp.</p>
-              <span class="news-card__meta">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
-                10/10/2025
-              </span>
-            </div>
-          </a>
+            <div class="activity-news-split__list" id="newsColumn"></div>
+          </div>
         </div>
 
-        <div style="text-align:center; margin-top: var(--space-6);">
-          <a href="tin-tuc.html" class="btn btn--outline">Xem tất cả tin tức</a>
+        <!-- Nguồn dữ liệu gộp: JS (initActivityNewsSplit) đọc data-event-date, so với ngày hôm nay
+             rồi phân vào cột Hoạt động (còn hạn/không có ngày) hoặc Tin tức (đã qua ngày), mới nhất trước. -->
+        <div id="eventsPool" hidden>
+          <a href="chuong-trinh.html#hoc-vien-khoi-nghiep" class="event-card">
+            <span class="event-card__media"><img src="assets/images/hero/event-2.jpg" alt="" loading="lazy" /></span>
+            <span class="event-card__body">
+              <span class="event-card__tag">Chương trình</span>
+              <h4>Học viện khởi nghiệp</h4>
+              <span class="event-card__meta">Trực tiếp tại Vườn ươm · Tuyển sinh liên tục</span>
+            </span>
+          </a>
+
+          <a href="chuong-trinh.html#huan-luyen-doanh-nghiep" class="event-card">
+            <span class="event-card__media"><img src="assets/images/hero/event-6.jpg" alt="" loading="lazy" /></span>
+            <span class="event-card__body">
+              <span class="event-card__tag">Chương trình</span>
+              <h4>Huấn luyện doanh nghiệp</h4>
+              <span class="event-card__meta">Trực tiếp tại Vườn ươm · Đang triển khai</span>
+            </span>
+          </a>
+
+          <a href="chuong-trinh.html#khoi-su-kinh-doanh-online" class="event-card">
+            <span class="event-card__media"><img src="assets/images/hero/event-3.jpg" alt="" loading="lazy" /></span>
+            <span class="event-card__body">
+              <span class="event-card__tag">Chương trình</span>
+              <h4>Khởi sự kinh doanh online</h4>
+              <span class="event-card__meta">Trực tuyến · Tuyển sinh liên tục</span>
+            </span>
+          </a>
+
+          <a href="tin-tuc.html#tin-hoi-nghi-giang-vien" class="event-card" data-event-date="2025-10-21">
+            <span class="event-card__media"><img src="assets/images/hero/event-8.jpg" alt="" loading="lazy" /></span>
+            <span class="event-card__body">
+              <span class="event-card__tag">Sự kiện</span>
+              <h4>Hội nghị giảng viên: Xây dựng chương trình đào tạo khởi nghiệp</h4>
+              <span class="event-card__meta">21/10/2025</span>
+            </span>
+          </a>
+
+          <a href="tin-tuc.html#tin-khai-giang-uom-tao" class="event-card" data-event-date="2025-10-17">
+            <span class="event-card__media"><img src="assets/images/hero/event-7.jpg" alt="" loading="lazy" /></span>
+            <span class="event-card__body">
+              <span class="event-card__tag">Ươm tạo</span>
+              <h4>Lễ khai giảng Ươm tạo doanh nghiệp khởi nghiệp sáng tạo 2025</h4>
+              <span class="event-card__meta">17/10/2025</span>
+            </span>
+          </a>
+
+          <a href="tin-tuc.html#tin-dacum" class="event-card" data-event-date="2025-10-10">
+            <span class="event-card__media"><img src="assets/images/hero/event-4.jpg" alt="" loading="lazy" /></span>
+            <span class="event-card__body">
+              <span class="event-card__tag">Sự kiện</span>
+              <h4>Hội thảo Phân tích năng lực nghề nghiệp (DACUM)</h4>
+              <span class="event-card__meta">10/10/2025</span>
+            </span>
+          </a>
+
+          <a href="tin-tuc.html#tin-doi-thoai" class="event-card" data-event-date="2025-09-17">
+            <span class="event-card__media"><img src="assets/images/hero/event-6.jpg" alt="" loading="lazy" /></span>
+            <span class="event-card__body">
+              <span class="event-card__tag">Sự kiện</span>
+              <h4>Đối thoại giữa lãnh đạo sở, ban ngành và doanh nghiệp khởi nghiệp</h4>
+              <span class="event-card__meta">17/09/2025</span>
+            </span>
+          </a>
+
+          <a href="tin-tuc.html#tin-le-ra-mat-hoi-dong" class="event-card" data-event-date="2025-09-20">
+            <span class="event-card__media"><img src="assets/images/hero/event-1.jpg" alt="" loading="lazy" /></span>
+            <span class="event-card__body">
+              <span class="event-card__tag">Sự kiện</span>
+              <h4>Lễ ra mắt Hội đồng Cố vấn Khởi nghiệp Tỉnh Vĩnh Long</h4>
+              <span class="event-card__meta">20/09/2025</span>
+            </span>
+          </a>
+
+          <a href="tin-tuc.html#tin-tot-nghiep-hvkn" class="event-card" data-event-date="2025-09-20">
+            <span class="event-card__media"><img src="assets/images/hero/event-2.jpg" alt="" loading="lazy" /></span>
+            <span class="event-card__body">
+              <span class="event-card__tag">Sự kiện</span>
+              <h4>Lễ tốt nghiệp Học viện Khởi nghiệp 2025</h4>
+              <span class="event-card__meta">20/09/2025</span>
+            </span>
+          </a>
+
+          <a href="tin-tuc.html#tin-vong-chung-ket" class="event-card" data-event-date="2025-09-15">
+            <span class="event-card__media"><img src="assets/images/hero/event-3.jpg" alt="" loading="lazy" /></span>
+            <span class="event-card__body">
+              <span class="event-card__tag">Sự kiện</span>
+              <h4>Vòng chung kết Cuộc thi Ý tưởng khởi nghiệp trong sinh viên Đại học Trà Vinh 2025</h4>
+              <span class="event-card__meta">15/09/2025</span>
+            </span>
+          </a>
         </div>
       </div>
     </section>
