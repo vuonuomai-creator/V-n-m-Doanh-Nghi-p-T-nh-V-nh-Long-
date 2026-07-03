@@ -244,6 +244,7 @@
 
     const items = Array.from(list.querySelectorAll(".news-list-item"));
     const filterLinks = Array.from(document.querySelectorAll("[data-news-filter]"));
+    const emptyState = document.getElementById("newsEmpty");
     if (!filterLinks.length) return;
 
     filterLinks.forEach((link) => {
@@ -254,10 +255,14 @@
           l.classList.toggle("is-active", l === link);
           l.setAttribute("aria-pressed", l === link ? "true" : "false");
         });
+        let visibleCount = 0;
         items.forEach((item) => {
           const matches = category === "all" || item.getAttribute("data-news-category") === category;
           item.classList.toggle("is-hidden", !matches);
+          if (matches) visibleCount++;
         });
+        list.classList.toggle("is-hidden", visibleCount === 0);
+        if (emptyState) emptyState.classList.toggle("is-visible", visibleCount === 0);
       });
     });
   }
