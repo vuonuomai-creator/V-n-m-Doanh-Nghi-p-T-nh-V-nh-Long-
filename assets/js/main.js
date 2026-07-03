@@ -39,7 +39,7 @@
     // Dropdown toggle bằng chạm trên mobile
     nav.querySelectorAll(".has-dropdown > a").forEach((link) => {
       link.addEventListener("click", (e) => {
-        if (window.innerWidth > 860) return;
+        if (window.innerWidth > 1240) return;
         e.preventDefault();
         link.parentElement.classList.toggle("is-open");
       });

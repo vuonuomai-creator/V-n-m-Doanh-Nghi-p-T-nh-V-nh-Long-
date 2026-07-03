@@ -111,6 +111,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-5);
+  max-width: 1320px;
 }
 
 .brand {
@@ -175,7 +176,7 @@
 .main-nav__list {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .main-nav__list > li {
@@ -191,6 +192,11 @@
   color: var(--color-text);
   border-bottom: 2px solid transparent;
   transition: color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+}
+
+.main-nav__list > li {
+  flex-shrink: 0;
 }
 
 .main-nav__list a:hover,
@@ -277,13 +283,13 @@
   visibility: visible;
 }
 
-@media (min-width: 861px) {
+@media (min-width: 1241px) {
   .nav-backdrop {
     display: none;
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1240px) {
   .nav-toggle {
     display: inline-flex;
   }
