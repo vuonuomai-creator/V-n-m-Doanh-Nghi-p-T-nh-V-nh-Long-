@@ -4,9 +4,10 @@
 
 :root {
   /* Màu sắc */
-  --color-primary: #14533D;
-  --color-primary-dark: #0D3B2B;
-  --color-primary-tint: #E8F1EC;
+  --color-primary: #1CAF1F;
+  --color-primary-dark: #116D13;
+  --color-primary-darker: #0B450C;
+  --color-primary-tint: #EDF7ED;
   --color-accent: #D9A441;
   --color-accent-dark: #B3822F;
 
@@ -199,7 +200,7 @@ p {
   position: absolute;
   left: var(--space-3);
   top: -60px;
-  background: var(--color-primary);
+  background: var(--color-primary-dark);
   color: #fff;
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-sm);

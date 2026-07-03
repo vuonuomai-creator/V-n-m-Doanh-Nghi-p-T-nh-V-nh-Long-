@@ -267,6 +267,13 @@
     });
   }
 
+  function initPartnersMarquee() {
+    const track = document.getElementById("partnersTrack");
+    if (!track) return;
+    const original = Array.from(track.children);
+    original.forEach((node) => track.appendChild(node.cloneNode(true)));
+  }
+
   function initActivityNewsSplit() {
     const pool = document.getElementById("eventsPool");
     const activityCol = document.getElementById("activityColumn");
@@ -424,6 +431,7 @@
     initActivityFilters();
     initNewsFilter();
     initActivityNewsSplit();
+    initPartnersMarquee();
     initProgramSearch();
     initContactForm();
     setYear();
