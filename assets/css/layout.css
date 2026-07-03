@@ -1199,14 +1199,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 94px;
+  height: 122px;
   padding-inline: var(--space-4);
 }
 
 .partners-marquee__logo img {
-  height: 62px;
+  height: 81px;
   width: auto;
-  max-width: 182px;
+  max-width: 237px;
   object-fit: contain;
   display: block;
 }
