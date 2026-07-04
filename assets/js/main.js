@@ -268,10 +268,12 @@
   }
 
   function initPartnersMarquee() {
-    const track = document.getElementById("partnersTrack");
-    if (!track) return;
-    const original = Array.from(track.children);
-    original.forEach((node) => track.appendChild(node.cloneNode(true)));
+    ["partnersTrackA", "partnersTrackB"].forEach((id) => {
+      const track = document.getElementById(id);
+      if (!track) return;
+      const original = Array.from(track.children);
+      original.forEach((node) => track.appendChild(node.cloneNode(true)));
+    });
   }
 
   function initActivityNewsSplit() {

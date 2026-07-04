@@ -1174,20 +1174,40 @@
   }
 }
 
-/* ---------- Đối tác (marquee chạy trái → phải) ---------- */
+/* ---------- Đối tác (khung logo-wall, 2 hàng chạy ngược chiều) ---------- */
+.partners-wall {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding-block: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
 .partners-marquee {
   position: relative;
   overflow: hidden;
-  padding-block: var(--space-5);
+  padding-block: var(--space-3);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.partners-marquee + .partners-marquee {
+  border-top: 1px solid var(--color-border);
 }
 
 .partners-marquee__track {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: partners-scroll 90s linear infinite;
+  animation: partners-scroll 100s linear infinite;
+}
+
+.partners-marquee--reverse .partners-marquee__track {
+  animation-name: partners-scroll-reverse;
+  animation-duration: 120s;
 }
 
 .partners-marquee:hover .partners-marquee__track {
@@ -1209,6 +1229,12 @@
   max-width: 237px;
   object-fit: contain;
   display: block;
+  filter: grayscale(1) opacity(0.55);
+  transition: filter var(--transition);
+}
+
+.partners-marquee__logo:hover img {
+  filter: grayscale(0) opacity(1);
 }
 
 @keyframes partners-scroll {
@@ -1220,6 +1246,15 @@
   }
 }
 
+@keyframes partners-scroll-reverse {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .partners-marquee__track {
     animation: none;
@@ -1227,6 +1262,10 @@
 
   .partners-marquee {
     overflow-x: auto;
+  }
+
+  .partners-marquee__logo img {
+    filter: none;
   }
 }
 
