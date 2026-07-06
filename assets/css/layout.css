@@ -555,25 +555,6 @@
   min-width: 0;
 }
 
-.hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  max-width: 100%;
-  background: var(--color-primary-tint);
-  color: var(--color-primary);
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 999px;
-  margin-bottom: var(--space-4);
-}
-
-.hero__eyebrow svg {
-  width: 16px;
-  height: 16px;
-}
-
 .hero h1 {
   margin-bottom: var(--space-4);
 }
