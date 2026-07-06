@@ -500,7 +500,7 @@
 .hero-intro .container {
   position: relative;
   z-index: 1;
-  padding-block: var(--space-7);
+  padding-block: var(--space-8);
 }
 
 .hero-intro__grid {
@@ -551,20 +551,20 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  padding: var(--space-4);
+  padding: var(--space-5);
 }
 
 .hero-intro__services > .eyebrow {
-  margin-bottom: var(--space-3);
-  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
   border-bottom: 1px solid var(--color-border);
 }
 
 .hero-intro__services-scroll {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
-  max-height: 260px;
+  gap: var(--space-2);
+  max-height: 320px;
   overflow-y: auto;
   padding-right: var(--space-2);
   margin-right: calc(var(--space-2) * -1);
@@ -583,8 +583,8 @@
 .service-mini {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-2);
+  gap: var(--space-4);
+  padding: var(--space-3);
   border-radius: var(--radius-md);
   color: var(--color-text);
   transition: background var(--transition), transform var(--transition);
@@ -600,8 +600,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 46px;
+  height: 46px;
   border-radius: var(--radius-md);
   background: var(--color-primary-tint);
   color: var(--color-primary-dark);
@@ -614,14 +614,14 @@
 }
 
 .service-mini__icon svg {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
 }
 
 .service-mini__title {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-base);
   font-weight: 600;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .hero-intro__services-more {
@@ -643,13 +643,13 @@
 
 @media (min-width: 1200px) {
   .hero-intro__grid {
-    grid-template-columns: 0.85fr 1.15fr 0.68fr;
+    grid-template-columns: 0.78fr 1fr 0.92fr;
     grid-template-areas: "media content services";
     gap: var(--space-7);
   }
 
   .hero-intro__services-scroll {
-    max-height: 340px;
+    max-height: 400px;
   }
 }
 
@@ -675,7 +675,7 @@
   }
 
   .hero-intro__services-scroll {
-    max-height: 220px;
+    max-height: 280px;
   }
 }
 
