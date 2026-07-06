@@ -148,8 +148,8 @@
 }
 
 .program-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  transform: perspective(800px) rotateX(2deg) translateY(-4px);
+  box-shadow: 0 20px 36px rgba(20, 30, 25, 0.14);
   border-color: transparent;
 }
 

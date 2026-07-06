@@ -1099,6 +1099,17 @@
   height: 14px;
 }
 
+/* .prose ul li có bullet + padding-left riêng — vô hiệu khi feature-list
+   được lồng bên trong khối .prose (vd. trang Chương trình). */
+.prose .feature-list li {
+  padding: var(--space-3);
+  color: var(--color-text);
+}
+
+.prose .feature-list li::before {
+  display: none;
+}
+
 .about-split {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1129,6 +1140,56 @@
 
 .about-panel .media-placeholder:hover img {
   transform: scale(1.04);
+}
+
+.about-panel + .about-panel {
+  margin-top: var(--space-6);
+}
+
+/* ---------- Chi tiết chương trình / dịch vụ (icon + heading) ---------- */
+.program-detail__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.program-detail__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-tint);
+  color: var(--color-primary-dark);
+}
+
+.program-detail__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.program-detail__head h2 {
+  margin-bottom: 0;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.tag {
+  display: inline-block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-tint);
+  padding: 4px 14px;
+  border-radius: 999px;
 }
 
 @media (max-width: 700px) {
