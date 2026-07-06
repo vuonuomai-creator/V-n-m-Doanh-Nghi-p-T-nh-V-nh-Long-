@@ -1311,10 +1311,6 @@
   .partners-marquee {
     overflow-x: auto;
   }
-
-  .partners-marquee__logo img {
-    filter: none;
-  }
 }
 
 /* ---------- CTA band ---------- */
