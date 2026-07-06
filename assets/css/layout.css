@@ -505,12 +505,16 @@
 
 .hero-intro__grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: var(--space-7);
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "services services"
+    "media content";
+  gap: var(--space-6);
   align-items: start;
 }
 
 .hero-intro__media {
+  grid-area: media;
   border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 4 / 3;
@@ -525,16 +529,126 @@
 }
 
 .hero-intro__content {
+  grid-area: content;
   max-width: 640px;
+}
+
+/* ---------- Dịch vụ (cột cuộn dọc bên trái) ---------- */
+.hero-intro__services {
+  grid-area: services;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4);
+}
+
+.hero-intro__services > .eyebrow {
+  margin-bottom: var(--space-3);
+}
+
+.hero-intro__services-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: var(--space-2);
+  margin-right: calc(var(--space-2) * -1);
+  mask-image: linear-gradient(180deg, transparent, #000 12px, #000 calc(100% - 12px), transparent);
+}
+
+.hero-intro__services-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.hero-intro__services-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+}
+
+.service-mini {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  transition: background var(--transition);
+}
+
+.service-mini:hover {
+  background: var(--color-primary-tint);
+}
+
+.service-mini__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-tint);
+  color: var(--color-primary-dark);
+}
+
+.service-mini__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.service-mini__title {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.hero-intro__services-more {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  color: var(--color-primary-dark);
+}
+
+.hero-intro__services-more svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (min-width: 1200px) {
+  .hero-intro__grid {
+    grid-template-columns: 0.68fr 0.85fr 1.15fr;
+    grid-template-areas: "services media content";
+  }
+
+  .hero-intro__services-scroll {
+    max-height: 340px;
+  }
 }
 
 @media (max-width: 900px) {
   .hero-intro__grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "content"
+      "media"
+      "services";
   }
 
   .hero-intro__media {
     aspect-ratio: 16 / 10;
+  }
+
+  .hero-intro__services-scroll {
+    max-height: 220px;
   }
 }
 
