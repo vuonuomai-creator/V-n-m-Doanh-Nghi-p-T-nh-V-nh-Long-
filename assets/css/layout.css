@@ -1078,27 +1078,22 @@
 
 /* ---------- Profile card (Chủ nhiệm CLB, thành viên...) ---------- */
 .profile-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-6);
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
-}
-
-.profile-card__header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-5);
-  margin-bottom: var(--space-5);
+  align-items: start;
 }
 
 .profile-card__media {
-  flex-shrink: 0;
-  width: 130px;
   border-radius: var(--radius-md);
   overflow: hidden;
-  aspect-ratio: 385 / 660;
-  box-shadow: var(--shadow-sm);
+  aspect-ratio: 1080 / 1790;
+  background: var(--color-bg-alt);
 }
 
 .profile-card__media img {
@@ -1106,6 +1101,12 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: grayscale(1);
+  transition: filter 400ms ease;
+}
+
+.profile-card__media:hover img {
+  filter: grayscale(0);
 }
 
 .profile-card__intro .eyebrow {
@@ -1213,16 +1214,18 @@
   }
 }
 
-@media (max-width: 560px) {
-  .profile-card__header {
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: 700px) {
+  .profile-card {
+    grid-template-columns: 1fr;
   }
 
   .profile-card__media {
-    width: 110px;
+    max-width: 220px;
+    margin: 0 auto;
   }
+}
 
+@media (max-width: 560px) {
   .profile-card__facts {
     flex-direction: column;
     align-items: flex-start;
