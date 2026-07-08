@@ -1946,12 +1946,188 @@
   color: var(--color-text);
 }
 
+/* ---------- Dịch vụ: danh sách dạng số thứ tự ---------- */
+.service-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.service-row {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.service-row__link {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr auto;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-3);
+  margin-inline: calc(var(--space-3) * -1);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--transition);
+}
+
+.service-row__link:hover,
+.service-row__link:focus-visible {
+  background: var(--color-bg-alt);
+}
+
+.service-row__index {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-border);
+  transition: color var(--transition);
+}
+
+.service-row__link:hover .service-row__index,
+.service-row__link:focus-visible .service-row__index {
+  color: var(--color-primary);
+}
+
+.service-row__body h3 {
+  font-size: var(--fs-lg);
+  margin: 0 0 var(--space-1);
+}
+
+.service-row__body p {
+  margin: 0;
+  color: var(--color-text-muted);
+  max-width: 56ch;
+}
+
+.service-row__arrow svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-text-muted);
+  transition: transform var(--transition), color var(--transition);
+}
+
+.service-row__link:hover .service-row__arrow svg,
+.service-row__link:focus-visible .service-row__arrow svg {
+  transform: translateX(4px);
+  color: var(--color-primary);
+}
+
+@media (max-width: 640px) {
+  .service-row__link {
+    grid-template-columns: 2.25rem 1fr;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-2);
+  }
+
+  .service-row__arrow {
+    display: none;
+  }
+
+  .service-row__index {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* ---------- Dịch vụ: banner CTA ---------- */
+.service-cta-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+  padding: var(--space-6);
+  background: var(--color-primary-dark);
+  border-radius: var(--radius-lg);
+}
+
+.service-cta-banner h3 {
+  color: #fff;
+  margin: 0 0 var(--space-1);
+  font-size: var(--fs-lg);
+}
+
+.service-cta-banner p {
+  margin: 0;
+  color: var(--color-on-primary-muted);
+  max-width: 48ch;
+}
+
+@media (max-width: 560px) {
+  .service-cta-banner {
+    padding: var(--space-5);
+  }
+
+  .service-cta-banner .btn {
+    width: 100%;
+  }
+}
+
+/* ---------- Dịch vụ: chi tiết từng mục ---------- */
+.service-detail__item {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: var(--space-5);
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.service-detail__item:first-child {
+  padding-top: 0;
+}
+
+.service-detail__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.service-detail__index {
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-border);
+  font-variant-numeric: tabular-nums;
+}
+
+.service-detail__content h3 {
+  font-size: var(--fs-lg);
+  margin: 0 0 var(--space-2);
+}
+
+.service-detail__content p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 560px) {
+  .service-detail__item {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .service-detail__index {
+    font-size: var(--fs-lg);
+  }
+}
+
 /* ---------- Grid nội dung 2 cột (sidebar) ---------- */
 .content-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: var(--space-7);
   align-items: start;
+}
+
+.content-sidebar--sticky {
+  position: sticky;
+  top: calc(var(--space-5) + 88px);
+}
+
+@media (max-width: 900px) {
+  .content-sidebar--sticky {
+    position: static;
+  }
 }
 
 .side-card {
