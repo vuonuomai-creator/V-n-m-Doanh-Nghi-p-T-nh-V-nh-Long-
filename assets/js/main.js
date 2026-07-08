@@ -354,6 +354,23 @@
     }
   }
 
+  function initProfileToggle() {
+    const toggle = document.getElementById("achievementsToggle");
+    const panel = document.getElementById("achievementsPanel");
+    if (!toggle || !panel) return;
+
+    const label = toggle.querySelector(".profile-card__toggle-label");
+
+    toggle.addEventListener("click", () => {
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!isExpanded));
+      panel.hidden = isExpanded;
+      if (label) {
+        label.textContent = isExpanded ? "Xem thành tích tiêu biểu" : "Ẩn thành tích tiêu biểu";
+      }
+    });
+  }
+
   function initContactForm() {
     const form = document.getElementById("contactForm");
     const success = document.getElementById("contactSuccess");
@@ -435,6 +452,7 @@
     initActivityNewsSplit();
     initPartnersMarquee();
     initProgramSearch();
+    initProfileToggle();
     initContactForm();
     setYear();
     markActiveNav();
