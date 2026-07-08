@@ -1804,6 +1804,20 @@
   align-items: flex-start;
 }
 
+.footer-contact a {
+  transition: color var(--transition);
+}
+
+.footer-contact a:hover,
+.footer-contact a:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-contact__sep {
+  color: rgba(255, 255, 255, 0.35);
+}
+
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
