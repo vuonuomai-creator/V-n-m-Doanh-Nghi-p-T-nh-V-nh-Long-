@@ -1076,6 +1076,80 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* ---------- Profile card (Chủ nhiệm CLB, thành viên...) ---------- */
+.profile-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-6);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  align-items: start;
+}
+
+.profile-card__media {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 385 / 660;
+}
+
+.profile-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-card__body h3 {
+  font-size: var(--fs-2xl);
+  margin: var(--space-2) 0;
+}
+
+.profile-card__meta {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-4);
+}
+
+.profile-card__facts {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+}
+
+.profile-card__facts div {
+  display: flex;
+  gap: var(--space-3);
+  font-size: var(--fs-sm);
+}
+
+.profile-card__facts dt {
+  font-weight: 600;
+  min-width: 90px;
+  color: var(--color-text);
+}
+
+.profile-card__facts dd {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .profile-card {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card__media {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+
 .about-panel .media-placeholder img {
   transition: transform 400ms ease;
 }
