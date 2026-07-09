@@ -371,6 +371,26 @@
     });
   }
 
+  function initServiceToggles() {
+    const toggles = document.querySelectorAll(".service-row__toggle");
+
+    toggles.forEach((toggle) => {
+      const panel = document.getElementById(toggle.getAttribute("aria-controls"));
+      if (!panel) return;
+
+      const label = toggle.querySelector(".service-row__toggle-label");
+
+      toggle.addEventListener("click", () => {
+        const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!isExpanded));
+        panel.hidden = isExpanded;
+        if (label) {
+          label.textContent = isExpanded ? "Xem chi tiết" : "Ẩn chi tiết";
+        }
+      });
+    });
+  }
+
   function initContactForm() {
     const form = document.getElementById("contactForm");
     const success = document.getElementById("contactSuccess");
@@ -453,6 +473,7 @@
     initPartnersMarquee();
     initProgramSearch();
     initProfileToggle();
+    initServiceToggles();
     initContactForm();
     setYear();
     markActiveNav();
