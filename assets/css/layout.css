@@ -1856,7 +1856,11 @@
 
 .page-hero {
   background: var(--color-bg-alt);
-  padding-block: var(--space-6);
+  padding-block: var(--space-4);
+}
+
+.page-hero + .section {
+  padding-top: var(--space-6);
 }
 
 .breadcrumb {
