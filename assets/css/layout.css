@@ -1101,12 +1101,6 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(1);
-  transition: filter 400ms ease;
-}
-
-.profile-card__media:hover img {
-  filter: grayscale(0);
 }
 
 .profile-card__intro .eyebrow {
@@ -1694,12 +1688,6 @@
   max-width: 237px;
   object-fit: contain;
   display: block;
-  filter: grayscale(1) opacity(0.55);
-  transition: filter var(--transition);
-}
-
-.partners-marquee__logo:hover img {
-  filter: grayscale(0) opacity(1);
 }
 
 @keyframes partners-scroll {
@@ -2078,6 +2066,95 @@
   .service-row__toggle {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* ---------- Lưới thành viên (Hội đồng cố vấn / doanh nghiệp đồng hành) ---------- */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.person-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-6) var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+
+.person-card:hover {
+  border-color: transparent;
+  box-shadow: var(--shadow-md);
+}
+
+.person-card__photo {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--space-4);
+}
+
+.person-card__role {
+  display: inline-block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-tint);
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: var(--space-3);
+}
+
+.person-card__role--lead {
+  color: #fff;
+  background: var(--color-primary-dark);
+}
+
+.person-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.person-card__body h3 {
+  font-size: var(--fs-md);
+  margin: 0 0 var(--space-3);
+}
+
+.person-card__body p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  text-align: left;
+}
+
+@media (max-width: 960px) {
+  .people-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .person-card {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .person-card__photo {
+    width: 96px;
+    height: 96px;
   }
 }
 
